@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>
+            Litecode
+        </title>
+    </head>
+    <body>
+        <input type="text" placeholder="username"/>
+        <input type="text" placeholder="password"/>
+        <input type="submit" title="submit"/>
+
+        <br>
+        <div id="problem-panel">
+
+        </div>
+
+        <script>
+            const problems = [{
+                name : "Hello",
+                rate: 66,
+                difficulty : "Hard"
+            },{
+                name : "Hello2",
+                rate: 66,
+                difficulty : "Easy"
+            },{
+                name : "Hello3",
+                rate: 66,
+                difficulty : "Hard"
+            }];
+
+            function loadProblems(){
+                const parent = document.getElementById("problem-panel");
+                const tableTag = document.createElement("table");
+                for(let i=0;i<problems.length; i++){
+                    const row = document.createElement("tr");
+                    const name = document.createElement("td");
+                    name.innerHTML = problems[i].name;
+                    const rate = document.createElement("td");
+                    rate.innerHTML = problems[i].rate;
+                    const difficulty = document.createElement("td");
+                    difficulty.innerHTML = problems[i].difficulty;
+
+                    row.appendChild(name)
+                    row.appendChild(rate)
+                    row.appendChild(difficulty)
+                    tableTag.appendChild(row)
+                }
+                parent.appendChild(tableTag);
+            }
+
+            loadProblems();
+        </script>
+    </body>
+</html>
